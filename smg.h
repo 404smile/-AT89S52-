@@ -6,10 +6,10 @@ int data_n[4][2];
 
 
 /////////////////////
-//×¢£»³ÌĞòÖĞns ====== ÄÏ±±
-//			we =======¶«Î÷
-//          p ======= ´ú±íÈËĞĞµÀ
-//          ºóÃæµÄ²ÎÊı´ú±íĞÔÖÊ£»Àı×Ó£º p_ns =====ÄÏ±±·½ÏòµÄÈËĞĞµÀ
+//æ³¨ï¼›ç¨‹åºä¸­ns ====== å—åŒ—
+//			we =======ä¸œè¥¿
+//          p ======= ä»£è¡¨äººè¡Œé“
+//          åé¢çš„å‚æ•°ä»£è¡¨æ€§è´¨ï¼›ä¾‹å­ï¼š p_ns =====å—åŒ—æ–¹å‘çš„äººè¡Œé“
 //
 //
  ///////////////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +20,7 @@ void sdelay()		//@12.000MHz
 	i = 22;
 	while (--i);
 }
-																  //////ÑÓÊ±
+																  //////å»¶æ—¶
 void delay(unsigned int t)
 {
 	unsigned char k,i;
@@ -46,7 +46,7 @@ char decode(int n)
 	 	case 0: k2 = number[0];return k2;break;
 		case 1: k2 = number[1];return k2;break;
 		case 2: k2 = number[2];return k2;break;
-		case 3: k2 = number[3];return k2;break;							  ////½âÂëÄ£¿é
+		case 3: k2 = number[3];return k2;break;							  ////è§£ç æ¨¡å—
 		case 4: k2 = number[4];return k2;break;
 		case 5: k2 = number[5];return k2;break;
 		case 6: k2 = number[6];return k2;break;
@@ -63,13 +63,13 @@ char decode(int n)
 ///////////////////////////////////////////////////////////////////////////////
 
 
-void write(int k3,int k4)  /////k3ÊÇÎ»ÖÃ£»k4 ÊÇÖµ
+void write(int k3,int k4)  /////k3æ˜¯ä½ç½®ï¼›k4 æ˜¯å€¼
 {
 		int i5;
 		int i3;
 		for (i5 = 1;i5>=0;i5--)
 		{	
-			{																	////Ğ´ÈëÄ£¿é
+			{																	////å†™å…¥æ¨¡å—
 			i3 = k4%10;
 			k4 = (k4-i3)/10;
 			data_n[k3][i5] = i3;
@@ -85,7 +85,7 @@ int read(int i2,int weix )
 		{
 			w = 1;P0 = weix;w = 0;sdelay();//delay(400);
 			P0 = 0xff;
-			p = 1;P0 = decode(data_n[i2][i4]);p = 0;sdelay();//delay(400);						   /////¶ÁÈ¡Ä£¿é
+			p = 1;P0 = decode(data_n[i2][i4]);p = 0;sdelay();//delay(400);						   /////è¯»å–æ¨¡å—
 			P0 = 0xff;
 			weix = weix<<1;
 			delay(2);sdelay();	
@@ -115,5 +115,3 @@ void smgp(int ns,int p_ns,int we,int p_we,unsigned long int t2)
 	}
 }
 
-
-////24¹¤»¥1 Å·Ğñ¾ü
